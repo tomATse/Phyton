@@ -17,6 +17,7 @@ def download_mp3_files(url, download_path):
     # Create download directory if it doesn't exist
     os.makedirs(download_path, exist_ok=True)
     
+    # Get local list of files
     downloaded_files = os.listdir(download_path)
     
     # Download each MP3 file
@@ -28,15 +29,15 @@ def download_mp3_files(url, download_path):
     # If not already downloaded
     if mp3_filename not in downloaded_files:
            
-        # Download the MP3 file 
+        # Download MP3 file 
         print("Downloading:", mp3_filename)
         with open(mp3_filepath, 'wb') as f:
             response = requests.get(mp3_url,stream=True)
             f.write(response.content)
 
-# Example usage
-#website_url = "https://archive.org/download/BBC_Essential_Mix_Collection"
-website_url = "https://ia803107.us.archive.org/20/items/BBC_Essential_Mix_Collection/"
+# Example usage 
+#website_url = "https://archive.org/download/BBC_Essential_Mix_Collection" #player url
+website_url = "https://ia803107.us.archive.org/20/items/BBC_Essential_Mix_Collection/" #forwarded real download url
 download_directory = "D:\\Temp\\bbc\\"
 download_mp3_files(website_url, download_directory)
 
