@@ -26,15 +26,17 @@ def download_mp3_files(url, download_path):
         mp3_filename = os.path.basename(mp3_url)
         mp3_filepath = os.path.join(download_path, mp3_filename)
     
-    # If not already downloaded
-    if mp3_filename not in downloaded_files:
-           
-        # Download MP3 file 
-        print("Downloading:", mp3_filename)
-        with open(mp3_filepath, 'wb') as f:
-            response = requests.get(mp3_url,stream=True)
-            f.write(response.content)
-
+        # If not already downloaded
+        if mp3_filename not in downloaded_files:
+            
+            # Download MP3 file 
+            print("Downloading:", mp3_filename)
+            with open(mp3_filepath, 'wb') as f:
+                response = requests.get(mp3_url,stream=True)
+                f.write(response.content)
+        else:
+            print("Exsiting:", mp3_filename)
+            
 # Example usage 
 #website_url = "https://archive.org/download/BBC_Essential_Mix_Collection" #player url
 website_url = "https://ia803107.us.archive.org/20/items/BBC_Essential_Mix_Collection/" #forwarded real download url
