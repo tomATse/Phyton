@@ -40,7 +40,7 @@ def download_mp3_files(url, download_path):
 # Example usage 
 #website_url = "https://archive.org/download/BBC_Essential_Mix_Collection" #player url
 website_url = "https://ia803107.us.archive.org/20/items/BBC_Essential_Mix_Collection/" #forwarded real download url
-download_directory = "D:\\Temp\\bbc\\"
+download_directory = "E:\\"
 download_mp3_files(website_url, download_directory)
 
 
