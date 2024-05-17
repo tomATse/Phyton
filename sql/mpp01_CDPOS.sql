@@ -1,0 +1,1 @@
+select * from DB_DEV_LANDING.MPP01.CDPOS;

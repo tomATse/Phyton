@@ -1,0 +1,1 @@
+select * from DB_DEV_ANALYTICS.PS_AN_STW.T_SAPIO_PV;
